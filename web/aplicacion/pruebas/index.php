@@ -20,6 +20,7 @@ function cuerpo()
     Elemento de pruebas
     <br><br>
     <a href="basicas.php">Funcionamiento básico</a>
+    <a href="pasopar.php">Paso parámetros</a>
 
 <?php
 }
