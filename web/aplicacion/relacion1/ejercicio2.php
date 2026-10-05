@@ -3,10 +3,10 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
 //dibuja la plantilla de la vista
-inicioCabecera("Mi Aplicación");
+inicioCabecera("PASO PARAMETROS - EJERCICIO 2");
 cabecera();
 finCabecera();
-inicioCuerpo("PASO PARAMETROS");
+inicioCuerpo("PASO PARAMETROS - EJERCICIO 2");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -42,7 +42,7 @@ function cuerpo()
     }
 
     ?>
-    <?php
+<?php
     $contadores = [
         1 => 0,
         2 => 0,
