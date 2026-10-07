@@ -83,6 +83,7 @@ function inicioCuerpo($cabecera)
                             <li><a href="/aplicacion/relacion1/ejercicio5.php">Ejercicio 5</a></li>
                             <li><a href="/aplicacion/relacion1/ejercicio6.php">Ejercicio 6</a></li>
                             <li><a href="/aplicacion/relacion1/ejercicio7.php">Ejercicio 7</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicioExtra.php">Ejercicio EXTRA</a></li>
                         </ul>
                     </li>
 
@@ -103,7 +104,7 @@ function inicioCuerpo($cabecera)
 
             <footer>
                 <div>
-                    &copy; <?php echo date('Y'); ?> Copyright Pablo Arjonilla
+                    &copy; <?php echo date('Y'); ?> Pablo Arjonilla
                 </div>
             </footer>
 
