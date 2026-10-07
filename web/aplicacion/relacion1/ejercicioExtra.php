@@ -46,7 +46,7 @@ function cuerpo()
         $texto = $item["TEXTO"] ?? "";
         $adicional = $item["ADICIONAL"] ?? "";
 
-        echo (!empty($enlace) ? "<a {$enlace}>{$texto} {$adicional}</a>" :
-            "<p>{$texto} {$adicional}</p>") . "  ";
+        echo !empty($enlace) ? "<a {$enlace}>{$texto} {$adicional}</a>" :
+            "<p>{$texto} {$adicional}</p>";
     }
 }
