@@ -35,10 +35,8 @@ function cuerpo()
      * 4 4 4 4
      * 5 5 5 5 5
      */
-    // 1. Inicializamos el array vacío
     $array = [];
 
-    // 2. Generamos el array con bucles for anidados
     for ($i = 1; $i <= 5; $i++) {
         $linea = "";
 
