@@ -49,7 +49,6 @@ function cuerpo()
         $array[] = trim($linea);
     }
 
-    // 3. Mostramos el resultado posteriormente con un foreach
     foreach ($array as $valor) {
         echo $valor . "<br>";
     }
