@@ -1,94 +1,116 @@
 <?php
 
+/**
+ * Muestra una página de error con un diseño limpio utilizando las clases CSS.
+ */
 function paginaError($mensaje)
 {
-  header("HTTP/1.0 404 $mensaje");
-  inicioCabecera("PRACTICA");
-  finCabecera();
-  inicioCuerpo("ERROR");
-  echo "<br />\n";
-  echo $mensaje;
-  echo "<br />\n";
-  echo "<br />\n";  echo "<br />\n";
-  echo "<a href='/index.php'>Ir a la pagina principal</a>\n";
-  
-  finCuerpo();  
+    header("HTTP/1.0 404 Not Found");
+    inicioCabecera("Error - Aplicación");
+    finCabecera();
+    inicioCuerpo("¡Atención!");
+
+    // Usamos la clase .error y un botón moderno para volver
+    echo "<div class='error'>" . htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8') . "</div>";
+    echo "<br />";
+    echo "<a href='/index.php' class='boton'>Ir a la página principal</a>";
+
+    finCuerpo();
+    exit;
 }
 
+/**
+ * Inicia la cabecera HTML y los meta tags.
+ */
 function inicioCabecera($titulo)
 {
 ?>
-<!DOCTYPE html>
-<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
+
     <head>
         <meta charset="utf-8">
-
-        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-        Remove this if you use the .htaccess -->
-            <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
-
-        <title><?php echo $titulo ?></title>
-        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><?php echo htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></title>
+        <meta name="description" content="Prácticas de desarrollo web">
         <meta name="author" content="Administrador">
+        <!-- CORREGIDO: Se cambió el punto y coma por una coma en el viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        
         <link rel="stylesheet" type="text/css" href="/estilos/base.css">
+    <?php
+}
+
+/**
+ * Cierra la etiqueta head.
+ */
+function finCabecera()
+{
+    ?>
+    </head>
 <?php
 }
 
-function finCabecera()
-{
-?>
-    </head>
-<?php   
-}
-
+/**
+ * Abre el cuerpo de la página, la estructura principal y el menú de navegación.
+ */
 function inicioCuerpo($cabecera)
 {
     global $acceso;
-
 ?>
+
     <body>
         <div id="documento">
-        
+
             <header>
-                <h1 id="titulo"><?php echo $cabecera;?></h1>
+                <h1 id="titulo"><?php echo htmlspecialchars($cabecera, ENT_QUOTES, 'UTF-8'); ?></h1>
             </header>
-            
-            <div id="barraLogin">
-                
-            </div>
-            <div id="barraMenu">
+
+            <nav id="barraMenu">
                 <ul>
                     <li><a href="/index.php">Inicio</a></li>
                     <li><a href="/aplicacion/pruebas/basicas.php">Ejemplos Básicos</a></li>
-                 </ul> 
-                
-            </div>
-            
-            <div>
-<?php   
-}
 
-function finCuerpo()
-{
-?>
-                <br />
-                <br />
-            </div>
+                    <li>
+                        <a href="#">Relación 1 ▾</a>
+                        <ul>
+                            <li><a href="/aplicacion/relacion1/ejercicio1.php">Ejercicio 1</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio2.php">Ejercicio 2</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio3.php">Ejercicio 3</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio4.php">Ejercicio 4</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio5.php">Ejercicio 5</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio6.php">Ejercicio 6</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicio7.php">Ejercicio 7</a></li>
+                            <li><a href="/aplicacion/relacion1/ejercicioExtra.php">Ejercicio EXTRA</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <main style="padding: 32px;">
+            <?php
+        }
+
+        /**
+         * Cierra el contenido, el documento y las etiquetas HTML.
+         */
+        function finCuerpo()
+        {
+            ?>
+            </main>
+
             <footer>
-                <hr width="90%"  />  
                 <div>
-                    &copy; Copyright  by Profesor
+                    &copy; <?php echo date('Y'); ?> Pablo Arjonilla
                 </div>
             </footer>
+
         </div>
     </body>
-</html>
+
+    </html>
 <?php
-}
+        }
