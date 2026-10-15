@@ -41,7 +41,6 @@ body {
   box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.05),
     0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
@@ -49,6 +48,8 @@ header {
   background: linear-gradient(135deg, #6366f1, #4f46e5);
   color: white;
   padding: 24px 32px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 #titulo {
@@ -58,10 +59,11 @@ header {
   letter-spacing: -0.025em;
 }
 
+/* --- BARRA DE MENÚ Y DESPLEGABLES --- */
 #barraMenu {
   background-color: var(--sidebar-bg);
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 24px;
+  padding: 0 24px;
 }
 
 #barraMenu ul {
@@ -70,12 +72,16 @@ header {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
+}
+
+#barraMenu li {
+  position: relative;
 }
 
 #barraMenu li a {
   display: block;
-  padding: 6px 14px;
+  padding: 12px 16px;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
@@ -89,10 +95,45 @@ header {
   color: var(--primary);
 }
 
-#documento > div:nth-of-type(3) {
-  padding: 32px;
+/* Submenú flotante */
+#barraMenu li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 6px;
+  z-index: 1000;
+  flex-direction: column;
 }
 
+#barraMenu li:hover ul {
+  display: flex;
+}
+
+#barraMenu li ul li {
+  width: 100%;
+}
+
+#barraMenu li ul li a {
+  padding: 10px 14px;
+  color: var(--text-main);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+#barraMenu li ul li a:hover {
+  background-color: #f1f5f9;
+  color: var(--primary);
+}
+
+/* --- COMPONENTES GENERALES --- */
 .boton {
   background-color: var(--primary);
   color: white;
@@ -169,6 +210,8 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 footer hr {
@@ -204,71 +247,4 @@ footer hr {
   font-size: 0.95rem;
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-}
-
-#barraMenu {
-  background-color: var(--sidebar-bg);
-  border-bottom: 1px solid var(--border-color);
-  padding: 0 24px;
-}
-
-#barraMenu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-#barraMenu li {
-  position: relative;
-}
-
-#barraMenu li a {
-  display: block;
-  padding: 12px 16px;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-#barraMenu li a:hover {
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
-}
-
-#barraMenu li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  min-width: 180px;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 6px;
-  z-index: 100;
-  flex-direction: column;
-}
-
-#barraMenu li:hover ul {
-  display: flex;
-}
-
-#barraMenu li ul li a {
-  padding: 8px 12px;
-  color: var(--text-main);
-  border-radius: 4px;
-}
-
-#barraMenu li ul li a:hover {
-  background-color: #f1f5f9;
-  color: var(--primary);
 }
