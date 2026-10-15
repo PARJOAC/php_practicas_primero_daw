@@ -46,4 +46,25 @@ function cuerpo()
     echo "<h3>Texto:</h3>";
     echo "<pre>" . htmlspecialchars($string) . "</pre>";
 
+    $regex_html = '/<[^>]+>/'; // Regex etiquetas HTML
+    $regex_num = '/\b\d+\b/'; // Regex números de una o varias cifras
+    $regex_correo = '/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/'; // Regex correos
+
+    busqueda($regex_html, $string, "etiquetas HTML");
+
+    busqueda($regex_num, $string, "números");
+
+    busqueda($regex_correo, $string, "correos");
+}
+
+function busqueda(string $regex, string $string, string $tipo)
+{
+    if (preg_match_all($regex, $string, $coincidencias)) {
+        echo "<h2>Coincidencias de $tipo:</h2>";
+        foreach ($coincidencias[0] as $elemento) {
+            echo "- " . htmlspecialchars($elemento) . "<br>";
+        }
+    }
+
+    echo "<br>";
 }
