@@ -33,4 +33,19 @@ function cuerpo()
      * el código fuente es legible (no se tiene una sola línea con todo seguido). Haz que se muestren
      * las etiquetas html (no se ejecuten)
      */
+
+    $cadenaEspecial = "&atilde;&otilde;&ntilde;";
+
+    $string = <<<HEREDOC
+        Ésta es la primera variable que se escribe con "HEREDOC".<br>
+        Se hace un salto de línea haciendo &lt;br&gt;. $cadenaEspecial <br><br><br>
+    HEREDOC;
+
+    echo $string;
+
+    $string = <<<NOWDOC
+        Ésta es la misma variable pero cambiado a 'NOWDOC'.<br>
+        Se hace un salto de línea haciendo &lt;br&gt;. $cadenaEspecial <br>
+    NOWDOC;
+    echo $string;
 }

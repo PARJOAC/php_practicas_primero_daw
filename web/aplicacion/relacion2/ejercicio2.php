@@ -25,7 +25,7 @@ function cuerpo()
 ?>
     <br>
 
-<?php
+    <?php
     /**
      * 2.- Dada la cadena "Está la niña en casa" se pide:
      * - Mostrar cada carácter en una línea separada y con tantos espacios en blanco como me
@@ -45,4 +45,53 @@ function cuerpo()
      * - Localiza en la cadena la palabra niña y cambia el siguiente carácter a niña (el
      * espacio en blanco) por "/mujer "
      */
+
+    $cadena = "Está la niña en casa";
+
+    ?>
+    <h1>Formato substr($cadena, $contador, 1)</h1>
+    <?php
+    for ($i = 0; $i < strlen($cadena); $i++) {
+        echo str_repeat("&nbsp;", $i) . substr($cadena, $i, 1) . "<br>";
+    }
+
+    ?>
+    <h1>Formato $cadena[]</h1>
+    <?php
+    for ($i = 0; $i < strlen($cadena); $i++) {
+        echo str_repeat("&nbsp;", $i) . $cadena[$i] . "<br>";
+    }
+
+    ?>
+    <h1>Formato mb_substr($cadena, $contador, 1)</h1>
+    <?php
+    for ($i = 0; $i < strlen($cadena); $i++) {
+        echo str_repeat("&nbsp;", $i) . mb_substr($cadena, $i, 1) . "<br>";
+    }
+
+    ?>
+
+    <h1>Formato invertido Pares / Impares</h1>
+    <?php
+    for ($i = strlen($cadena); $i >= 0; $i--) {
+        $letra = mb_substr($cadena, $i, 1);
+        echo str_repeat("&nbsp;", $i) . ($i % 2 == 0 ? mb_strtoupper($letra) : mb_strtolower($letra)) . "<br>";
+    }
+
+    ?>
+
+    <h1>Separar por la a</h1>
+<?php
+    $array = explode("a", $cadena);
+    foreach($array as $arr) {
+        echo $arr . "a<br>";
+    }
+
+    ?>
+
+    <h1>Cambio a /mujer</h1>
+<?php
+    $localizacion = mb_strpos($cadena, "niña");
+
+    echo substr_replace($cadena, "/mujer ", $localizacion + 6, 1);
 }
