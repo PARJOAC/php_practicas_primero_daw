@@ -36,4 +36,14 @@ function cuerpo()
      * Muestra la posición/elemento encontrado usando las expresiones regulares definidas y la
      * función preg_match.
      */
+
+    $string = <<<NOWDOC
+    Texto de <strong>ejemplo</strong> con un <h1>H1</h1>
+    Números: 1,2,3,4,5,6,7,8,9,0
+    Correo: ejemplo@ejemplo.com
+    NOWDOC;
+
+    echo "<h3>Texto:</h3>";
+    echo "<pre>" . htmlspecialchars($string) . "</pre>";
+
 }
