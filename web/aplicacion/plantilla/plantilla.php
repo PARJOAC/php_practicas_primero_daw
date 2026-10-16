@@ -98,6 +98,17 @@ function inicioCuerpo($cabecera)
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="#">Relación 3 ▾</a>
+                        <ul>
+                            <li><a href="/aplicacion/relacion3/ejercicio1.php">Ejercicio 1</a></li>
+                            <li><a href="/aplicacion/relacion3/ejercicio2.php">Ejercicio 2</a></li>
+                            <li><a href="/aplicacion/relacion3/ejercicio3.php">Ejercicio 3</a></li>
+                            <li><a href="/aplicacion/relacion3/ejercicio4.php">Ejercicio 4</a></li>
+                            <li><a href="/aplicacion/relacion3/ejercicio5.php">Ejercicio 5</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </nav>
 
