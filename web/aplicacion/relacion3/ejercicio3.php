@@ -27,6 +27,12 @@ function cuerpo()
 
 <?php
 /**
- * 
+ * 3.- Función operaciones(). Esta función recibe al menos tres parámetros. El primero (entero) es el
+ * tipo de operación. Los demás son valores numéricos (los operandos). El tipo de operación puede ser
+ *      - 1, suma todos los operandos
+ *      - 2, al primer operando se restan el resto
+ *      - 3, multiplicación de todos los operandos.
+ * En cualquier otro caso se suman los operandos que ocupan las posiciones pares y se restan
+ * los de las posiciones impares (el primer operando es 1).
  */
 }
