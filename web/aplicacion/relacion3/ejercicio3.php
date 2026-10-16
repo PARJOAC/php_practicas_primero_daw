@@ -3,10 +3,10 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
 //dibuja la plantilla de la vista
-inicioCabecera("STRINGS - EJERCICIO 3");
+inicioCabecera("FUNCIONES - EJERCICIO 3");
 cabecera();
 finCabecera();
-inicioCuerpo("STRINGS - EJERCICIO 3");
+inicioCuerpo("FUNCIONES - EJERCICIO 3");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
