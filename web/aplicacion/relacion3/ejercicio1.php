@@ -2,7 +2,6 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
-
 /**
  * 1.- Función cuentaVeces(). A esta función se le pasan cuatro parámetros: un array, una cadena y dos
  * números. La función se encargará de añadir en el array el primer número a la posición asociativa
@@ -22,16 +21,8 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
  * //$vector(“otra”=>9).En numero se devuelve 2 porque es la segunda llamada...
  */
 
-function cuentaVeces(array &$array, string $posicion, int $primerNumero, int &$contador): true|false
-{
-    //Se suma al contador
-    $contador++;
-
-    // Añadir al array
-    $array[$posicion] = $primerNumero;
-
-    return true;
-}
+$contador = 0;
+$array = array();
 
 
 //dibuja la plantilla de la vista
@@ -54,9 +45,30 @@ function cabecera()
 //vista
 function cuerpo()
 {
+    global $array, $contador;
 ?>
     <br>
 
 <?php
 
+    for ($i = 0; $i < 20; $i++) {
+        $mensaje = "";
+        cuentaVeces($array, "1posicion", 2, $contador) ?
+            $mensaje = "Llamada $i exitosa. Contador: $contador <br>" :
+            "Error en la llamada $i <br>";
+        echo $mensaje;
+    }
+}
+
+
+function cuentaVeces(array &$array, string $posicion, int $valor, int &$contador): bool
+{
+    if ($posicion === "2daw" || $posicion === "primera") return false;
+    //Se suma al contador
+    $contador++;
+
+    // Añadir al array
+    $array[$posicion] = $valor;
+
+    return true;
 }
