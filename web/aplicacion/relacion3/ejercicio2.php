@@ -36,6 +36,12 @@ function cuerpo()
     echo generarCadena();
 }
 
+/**
+ * Generar una cadena aleatoria
+ *
+ * @param integer $defecto
+ * @return false|string
+ */
 function generarCadena(int $defecto = 10): false|string
 {
     if($defecto > 10) return false;
