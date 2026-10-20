@@ -53,14 +53,23 @@ function cuerpo()
 
     for ($i = 0; $i < 20; $i++) {
         $mensaje = "";
-        cuentaVeces($array, "1posicion", 2, $contador) ?
-            $mensaje = "Llamada $i exitosa. Contador: $contador <br>" :
+        $mensaje = cuentaVeces($array, "{$i}daw", $i, $contador) ?
+            "Llamada $i exitosa. Contador: $contador <br>" :
             "Error en la llamada $i <br>";
         echo $mensaje;
     }
 }
 
 
+/**
+ * Funcion para contar
+ *
+ * @param array $array
+ * @param string $posicion
+ * @param integer $valor
+ * @param integer $contador
+ * @return boolean
+ */
 function cuentaVeces(array &$array, string $posicion, int $valor, int &$contador): bool
 {
     if ($posicion === "2daw" || $posicion === "primera") return false;
