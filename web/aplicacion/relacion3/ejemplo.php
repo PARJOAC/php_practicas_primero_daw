@@ -26,16 +26,18 @@ function cuerpo()
     <br>
 
 <?php
-    /**
-     * Función para sacar el doble de un número entero.
-     *
-     * @param integer $num Número entero
-     * @return integer|false Devuelve el doble o false
-     */
-    function doble(int $num): int|false
-    {
-        if ($num < 10) return false;
+    echo doble(22);
+}
 
-        return 2 * $num;
-    }
+/**
+ * Función para sacar el doble de un número entero.
+ *
+ * @param integer $num Número entero
+ * @return integer|false Devuelve el doble o false
+ */
+function doble(int $num): int|false
+{
+    if ($num < 10) return false;
+
+    return 2 * $num;
 }
