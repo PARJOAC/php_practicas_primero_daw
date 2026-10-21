@@ -64,8 +64,11 @@ function inicioCuerpo($cabecera)
     <body>
         <div id="documento">
 
-            <header>
-                <h1 id="titulo"><?php echo htmlspecialchars($cabecera, ENT_QUOTES, 'UTF-8'); ?></h1>
+            <header style="display: flex; align-items: center; gap: 15px;">
+                <a href="/index.php">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAATgzWAT0XycykMnFTneSVTs_WcAK3-rf_GcY0_XEOLoWUQGALTSOxUIa&s=10" width="52px" height="52px" alt="Logo">
+                </a>
+                <h1 id="titulo" style="margin: 0;"><?php echo htmlspecialchars($cabecera, ENT_QUOTES, 'UTF-8'); ?></h1>
             </header>
 
             <nav id="barraMenu">
