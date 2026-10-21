@@ -1,6 +1,8 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+$numero1 = 6;
+$numero2 = 4;
 
 //dibuja la plantilla de la vista
 inicioCabecera("FUNCIONES - EJERCICIO 3");
@@ -22,6 +24,7 @@ function cabecera()
 //vista
 function cuerpo()
 {
+    global $numero1, $numero2;
 ?>
     <br>
 
@@ -35,8 +38,7 @@ function cuerpo()
      * En cualquier otro caso se suman los operandos que ocupan las posiciones pares y se restan
      * los de las posiciones impares (el primer operando es 1).
      */
-    $numero1 = 6;
-    $numero2 = 4;
+
     echo "<h2>Números: " . $numero1 . " y " . $numero2 . "</h2>";
     ?>
     <h3>Suma</h1>
