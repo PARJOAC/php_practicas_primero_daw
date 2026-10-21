@@ -91,7 +91,7 @@ function cuerpo()
 }
 
 // Función que recibe el callable y lo ejecuta
-function llamadaAFuncion(int $a, int $b, callable $call)
+function llamadaAFuncion(int $a, int $b, callable $call): int
 {
     return $call($a, $b);
 }
