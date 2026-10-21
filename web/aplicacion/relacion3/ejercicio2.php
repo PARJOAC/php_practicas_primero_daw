@@ -44,12 +44,12 @@ function cuerpo()
  */
 function generarCadena(int $defecto = 10): false|string
 {
-    if($defecto > 10) return false;
+    if ($defecto > 10) return false;
     $cadena = "";
 
     // Desde el 48 al 57 (números)
     // Desde el 65 hasta el 90 ambos incluidos (letras mayúsculas)
-    //Desde el 97 al 122 ambos incluidos (letras minúsculas)
+    // Desde el 97 al 122 ambos incluidos (letras minúsculas)
     for ($i = 0; $i < $defecto; $i++) {
         $random = rand(1, 3);
         $letraRandom = 0;

@@ -1,6 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+// Definición del enumerado para tipar las operaciones matemáticas permitidas
 enum TipoOperacion: string
 {
     case SUMA = 'SUMA';
@@ -44,23 +45,29 @@ function cuerpo()
 
     <h2>MULTIPLICACION</h2>
     <?php
+    // Llama a la función principal para calcular y mostrar la multiplicación
     echo hacerOperacion(TipoOperacion::MULTIPLICACION, 2, 6) . "<br>";
     ?>
 
     <h2>RESTA</h2>
     <?php
+    // Llama a la función principal para calcular y mostrar la resta
     echo hacerOperacion(TipoOperacion::RESTA, 5, 1) . "<br>";
     ?>
 
     <h2>SUMA</h2>
 <?php
+    // Llama a la función principal para calcular y mostrar la suma
     echo hacerOperacion(TipoOperacion::SUMA, 6, 4) . "<br>";
 }
 
+// Función encargada de validar el tipo de operación y delegar el cálculo
 function hacerOperacion(TipoOperacion $operacion, int $num1, int $num2): int
 {
+    // Validación por si el parámetro de operación es nulo
     if ($operacion === null) return throw new Error("El tipo de operación no es válido.");
     $resultado = 0;
+    // Estructura de control para ejecutar la función adecuada según el tipo recibido
     switch ($operacion) {
         case TipoOperacion::SUMA: {
                 $resultado = suma($num1, $num2);
@@ -78,18 +85,19 @@ function hacerOperacion(TipoOperacion $operacion, int $num1, int $num2): int
     return $resultado;
 }
 
+// Función que calcula la suma de dos enteros
 function suma(int $num1, int $num2): int
 {
     return $num1 + $num2;
 }
 
-
+// Función que calcula la resta de dos enteros
 function resta(int $num1, int $num2): int
 {
     return $num1 - $num2;
 }
 
-
+// Función que calcula la multiplicación de dos enteros
 function multiplicacion(int $num1, int $num2): int
 {
     return $num1 * $num2;

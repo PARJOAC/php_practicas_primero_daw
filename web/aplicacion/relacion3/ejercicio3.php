@@ -66,24 +66,33 @@ function cuerpo()
  */
 function operaciones(int $tipoOperacion, float $primerNumero, float $segundoNumero): float
 {
+    // Inicializamos la variable que contendrá el resultado de la operación
     $resultado = 0;
+
+    // Evaluamos el tipo de operación mediante un selector numérico
     switch ($tipoOperacion) {
         case 1: {
+                // Operación de suma
                 $resultado = $primerNumero + $segundoNumero;
                 break;
             }
         case 2: {
+                // Operación de resta
                 $resultado = $primerNumero - $segundoNumero;
                 break;
             }
         case 3: {
+                // Operación de multiplicación
                 $resultado = $primerNumero * $segundoNumero;
                 break;
             }
         default: {
+                // Caso por defecto (si el código de operación no es 1, 2 o 3)
                 $resultado = $primerNumero + $segundoNumero;
                 break;
             }
     }
+
+    // Retornamos el valor resultante
     return $resultado;
 }
