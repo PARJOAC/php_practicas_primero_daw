@@ -3,7 +3,8 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 $numero1 = 6;
 $numero2 = 4;
-
+$numero3 = 6;
+$numero4 = 8;
 //dibuja la plantilla de la vista
 inicioCabecera("FUNCIONES - EJERCICIO 3");
 cabecera();
@@ -24,7 +25,7 @@ function cabecera()
 //vista
 function cuerpo()
 {
-    global $numero1, $numero2;
+    global $numero1, $numero2, $numero3, $numero4;
 ?>
     <br>
 
@@ -39,7 +40,6 @@ function cuerpo()
      * los de las posiciones impares (el primer operando es 1).
      */
 
-    echo "<h2>Números: " . $numero1 . " y " . $numero2 . "</h2>";
     ?>
     <h3>Suma</h1>
         <?php
@@ -48,51 +48,65 @@ function cuerpo()
 
         <h3>Resta</h3>
         <?php
-        echo operaciones(2, $numero1, $numero2);
+        echo operaciones(2, $numero1, $numero2, $numero3);
         ?>
 
         <h3>Multiplicación</h3>
     <?php
-    echo operaciones(3, $numero1, $numero2);
+    echo operaciones(3, $numero1, $numero2, $numero3, $numero4);
 }
 
 /**
- * Operaciones con numeros
+ * Undocumented function
  *
  * @param integer $tipoOperacion
- * @param float $primerNumero
- * @param float $segundoNumero
+ * @param float ...$operandos
  * @return float
  */
-function operaciones(int $tipoOperacion, float $primerNumero, float $segundoNumero): float
+function operaciones(int $tipoOperacion, float ...$operandos): float
 {
+    if (empty($operandos)) return 0;
     // Inicializamos la variable que contendrá el resultado de la operación
     $resultado = 0;
 
-    // Evaluamos el tipo de operación mediante un selector numérico
+    // Evaluamos el tipo de operación mediante un switch
     switch ($tipoOperacion) {
-        case 1: {
-                // Operación de suma
-                $resultado = $primerNumero + $segundoNumero;
-                break;
+        case 1:
+            // Suma todos los operandos
+            $resultado = array_sum($operandos);
+            break;
+
+        case 2:
+            // Al primer operando se le resta el resto
+            $resultado = $operandos[0];
+            for ($i = 1; $i < count($operandos); $i++) {
+                $resultado -= $operandos[$i];
             }
-        case 2: {
-                // Operación de resta
-                $resultado = $primerNumero - $segundoNumero;
-                break;
+            break;
+
+        case 3:
+            // Multiplicación de todos los operandos
+            $resultado = 1;
+            foreach ($operandos as $operando) {
+                $resultado *= $operando;
             }
-        case 3: {
-                // Operación de multiplicación
-                $resultado = $primerNumero * $segundoNumero;
-                break;
+            break;
+
+        default:
+            // Se suman las posiciones pares y se restan las impares 
+            $resultado = 0;
+            foreach ($operandos as $index => $valor) {
+                $posicionPar = $index + 1;
+                if ($posicionPar % 2 == 0) {
+                    // Posición par se suma
+                    $resultado += $valor;
+                } else {
+                    // Posición impar se resta
+                    $resultado -= $valor;
+                }
             }
-        default: {
-                // Caso por defecto (si el código de operación no es 1, 2 o 3)
-                $resultado = $primerNumero + $segundoNumero;
-                break;
-            }
+            break;
     }
 
-    // Retornamos el valor resultante
     return $resultado;
 }
