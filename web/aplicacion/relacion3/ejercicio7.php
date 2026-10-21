@@ -26,9 +26,9 @@ function cuerpo()
     <br>
 
 <?php
-/**
- * 7.- Función ordenar(): A esta función se le pasa un array y lo ordena mediante una llamada a usort,
- * al que se indicará como función callback una función anónima que ordenará en orden descendente
- * según el número de caracteres de cada elemento.
- */
+    /**
+     * 7.- Función ordenar(): A esta función se le pasa un array y lo ordena mediante una llamada a usort,
+     * al que se indicará como función callback una función anónima que ordenará en orden descendente
+     * según el número de caracteres de cada elemento.
+     */
 }
