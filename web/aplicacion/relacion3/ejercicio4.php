@@ -36,7 +36,7 @@ function cuerpo()
  *      - El primer y el segundo parámetro
  *      - El primer y el tercer parámetro (ojo, el segundo parámetro no se indica)
  */
-$valor=7;
-devuelve($valor,4); //$valor valdrá 7+4+10 y se devuelve 7*4*10 (10 es el valor por defecto que le he puesto al tercer parámetro.
-
+}
+function devuelve(int $valor, ): int {
+    return 1;
 }
