@@ -1,6 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+include_once("./funciones/rel3Funciones.php");
 
 //dibuja la plantilla de la vista
 inicioCabecera("FUNCIONES - EJERCICIO 4");
@@ -56,7 +57,3 @@ function cuerpo()
     echo "<p>4. Primero y tercero (5, -, 2) -> Total: <b>$prod4</b></p>";
 }
 
-function devuelve(int $valor1, int $valor2 = 4, int $valor3 = 10): int
-{
-    return $valor1 * $valor2 * $valor3;
-}

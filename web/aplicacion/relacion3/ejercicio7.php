@@ -1,6 +1,8 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+include_once("./funciones/rel3Funciones.php");
+
 $array = [45, 234, 12, 3, 4975, 0, 2374, 4589, 12934545, 78, 34, 21];
 
 //dibuja la plantilla de la vista
@@ -51,11 +53,4 @@ function cuerpo()
     }
 }
 
-function ordenar(array &$array)
-{
-    //Se ordena el array para que se vea de mayor a menor según el numero de caracteres
-    usort($array, fn($a, $b) => strlen((string)$b) <=> strlen((string)$a));
 
-    // Devolvemos el array
-    return $array;
-}

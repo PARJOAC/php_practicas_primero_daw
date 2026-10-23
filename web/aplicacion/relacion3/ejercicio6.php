@@ -2,6 +2,7 @@
 // Incluye la cabecera general
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+include_once("./funciones/rel3Funciones.php");
 
 // Definición de función anónima para la suma
 $funcionSuma = function (int $a, int $b): int {
@@ -90,8 +91,4 @@ function cuerpo()
     echo $funcionSuma(2, 5) . "<br>";
 }
 
-// Función que recibe el callable y lo ejecuta
-function llamadaAFuncion(int $a, int $b, callable $call): int
-{
-    return $call($a, $b);
-}
+

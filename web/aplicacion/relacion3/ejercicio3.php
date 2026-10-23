@@ -1,6 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+include_once("./funciones/rel3Funciones.php");
 $numero1 = 6;
 $numero2 = 4;
 $numero3 = 6;
@@ -56,57 +57,3 @@ function cuerpo()
     echo operaciones(3, $numero1, $numero2, $numero3, $numero4);
 }
 
-/**
- * Undocumented function
- *
- * @param integer $tipoOperacion
- * @param float ...$operandos
- * @return float
- */
-function operaciones(int $tipoOperacion, float ...$operandos): float
-{
-    if (empty($operandos)) return 0;
-    // Inicializamos la variable que contendrá el resultado de la operación
-    $resultado = 0;
-
-    // Evaluamos el tipo de operación mediante un switch
-    switch ($tipoOperacion) {
-        case 1:
-            // Suma todos los operandos
-            $resultado = array_sum($operandos);
-            break;
-
-        case 2:
-            // Al primer operando se le resta el resto
-            $resultado = $operandos[0];
-            for ($i = 1; $i < count($operandos); $i++) {
-                $resultado -= $operandos[$i];
-            }
-            break;
-
-        case 3:
-            // Multiplicación de todos los operandos
-            $resultado = 1;
-            foreach ($operandos as $operando) {
-                $resultado *= $operando;
-            }
-            break;
-
-        default:
-            // Se suman las posiciones pares y se restan las impares 
-            $resultado = 0;
-            foreach ($operandos as $index => $valor) {
-                $posicionPar = $index + 1;
-                if ($posicionPar % 2 == 0) {
-                    // Posición par se suma
-                    $resultado += $valor;
-                } else {
-                    // Posición impar se resta
-                    $resultado -= $valor;
-                }
-            }
-            break;
-    }
-
-    return $resultado;
-}

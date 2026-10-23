@@ -1,6 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
+include_once("./funciones/rel3Funciones.php");
 
 //dibuja la plantilla de la vista
 inicioCabecera("FUNCIONES - EJERCICIO 2");
@@ -36,36 +37,3 @@ function cuerpo()
     echo generarCadena();
 }
 
-/**
- * Generar una cadena aleatoria
- *
- * @param integer $defecto
- * @return false|string
- */
-function generarCadena(int $defecto = 10): false|string
-{
-    if ($defecto > 10) return false;
-    $cadena = "";
-
-    // Desde el 48 al 57 (números)
-    // Desde el 65 hasta el 90 ambos incluidos (letras mayúsculas)
-    // Desde el 97 al 122 ambos incluidos (letras minúsculas)
-    for ($i = 0; $i < $defecto; $i++) {
-        $random = rand(1, 3);
-        $letraRandom = 0;
-        switch ($random) {
-            case 1:
-                $letraRandom = rand(48, 57);
-                break;
-            case 2:
-                $letraRandom = rand(65, 90);
-                break;
-            case 3:
-                $letraRandom = rand(97, 122);
-                break;
-        }
-        $cadena = $cadena . chr($letraRandom);
-    }
-
-    return $cadena;
-}

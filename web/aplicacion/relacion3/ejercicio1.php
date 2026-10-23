@@ -1,7 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-
+include_once("./funciones/rel3Funciones.php");
 /**
  * 1.- Función cuentaVeces(). A esta función se le pasan cuatro parámetros: un array, una cadena y dos
  * números. La función se encargará de añadir en el array el primer número a la posición asociativa
@@ -61,23 +61,4 @@ function cuerpo()
 }
 
 
-/**
- * Funcion para contar
- *
- * @param array $array
- * @param string $posicion
- * @param integer $valor
- * @param integer $contador
- * @return boolean
- */
-function cuentaVeces(array &$array, string $posicion, int $valor, int &$contador): bool
-{
-    if ($posicion === "2daw" || $posicion === "primera") return false;
-    //Se suma al contador
-    $contador++;
 
-    // Añadir al array
-    $array[$posicion] = $valor;
-
-    return true;
-}
