@@ -34,7 +34,6 @@ function inicioCabecera($titulo)
         <title><?php echo htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></title>
         <meta name="description" content="Prácticas de desarrollo web">
         <meta name="author" content="Administrador">
-        <!-- CORREGIDO: Se cambió el punto y coma por una coma en el viewport -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="shortcut icon" href="/favicon.ico">
@@ -50,6 +49,60 @@ function finCabecera()
 {
     ?>
     </head>
+<?php
+}
+
+/**
+ * Genera la barra de navegación y migas de pan según la ruta actual.
+ */
+function barraNavegacion()
+{
+    $ruta = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
+    $paginaActual = 'Página actual';
+    $enlaceVolver = '/index.php';
+    $migas = [];
+
+    if (preg_match('~/(relacion[123])/(ejercicioExtra|ejercicio[1-7])\.php$~', $ruta, $coincidencias)) {
+        $numeroRelacion = substr($coincidencias[1], strlen('relacion'));
+        $relacion = 'Relación ' . $numeroRelacion;
+        $enlaceRelacion = '/aplicacion/' . $coincidencias[1] . '/ejercicio1.php';
+
+        if ($coincidencias[2] === 'ejercicioExtra') {
+            $paginaActual = 'Ejercicio EXTRA';
+        } else {
+            $numeroEjercicio = substr($coincidencias[2], strlen('ejercicio'));
+            $paginaActual = 'Ejercicio ' . $numeroEjercicio;
+        }
+
+        $enlaceVolver = $enlaceRelacion;
+        $migas[] = ['texto' => $relacion, 'enlace' => $enlaceRelacion];
+    } else {
+        $nombreArchivo = pathinfo($ruta, PATHINFO_FILENAME);
+        $paginaActual = ucfirst(str_replace(['_', '-'], ' ', $nombreArchivo));
+    }
+?>
+    <nav class="barraNavegacion" aria-label="Navegación de la página">
+        <a
+            class="botonVolver"
+            href="<?php echo htmlspecialchars($enlaceVolver, ENT_QUOTES, 'UTF-8'); ?>"
+            onclick="if (window.history.length > 1) { window.history.back(); return false; }">&#8592; Volver</a>
+
+        <div class="migas">
+            <a href="/index.php">Inicio</a>
+
+            <?php foreach ($migas as $miga) { ?>
+                <span aria-hidden="true">&rsaquo;</span>
+                <a href="<?php echo htmlspecialchars($miga['enlace'], ENT_QUOTES, 'UTF-8'); ?>">
+                    <?php echo htmlspecialchars($miga['texto'], ENT_QUOTES, 'UTF-8'); ?>
+                </a>
+            <?php } ?>
+
+            <span aria-hidden="true">&rsaquo;</span>
+            <span aria-current="page">
+                <?php echo htmlspecialchars($paginaActual, ENT_QUOTES, 'UTF-8'); ?>
+            </span>
+        </div>
+    </nav>
 <?php
 }
 
@@ -116,6 +169,8 @@ function inicioCuerpo($cabecera)
 
                 </ul>
             </nav>
+
+            <?php barraNavegacion(); ?>
 
             <main style="padding: 32px;">
             <?php

@@ -248,3 +248,57 @@ footer hr {
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
+
+.barraNavegacion {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 32px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+}
+
+.botonVolver {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.botonVolver:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.migas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.migas a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.migas [aria-current="page"] {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .barraNavegacion {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+}
