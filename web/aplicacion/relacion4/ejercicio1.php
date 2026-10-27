@@ -28,4 +28,9 @@ function cuerpo()
 
 <?php
 
+    $flautaDulce = new Flauta("Flauta de plástico para clase");
+    $guitarraAcustica = new Guitarra("Yamaha C40 con 6 cuerdas");
+
+    echo $flautaDulce . "<br>";
+    echo $guitarraAcustica . "<br>";
 }
