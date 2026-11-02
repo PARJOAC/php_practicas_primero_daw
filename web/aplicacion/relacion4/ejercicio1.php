@@ -1,14 +1,15 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-
+$flautaDulce = new Flauta("Flauta de plástico para clase");
+$guitarraAcustica = new Guitarra("Yamaha C40 con 6 cuerdas");
 
 //dibuja la plantilla de la vista
 inicioCabecera("CLASES - EJERCICIO 1");
 cabecera();
 finCabecera();
 inicioCuerpo("CLASES - EJERCICIO 1");
-cuerpo(); //llamo a la vista
+cuerpo($flautaDulce, $guitarraAcustica); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -21,15 +22,12 @@ function cabecera()
 
 }
 //vista
-function cuerpo()
+function cuerpo($flautaDulce, $guitarraAcustica)
 {
 ?>
     <br>
 
 <?php
-
-    $flautaDulce = new Flauta("Flauta de plástico para clase");
-    $guitarraAcustica = new Guitarra("Yamaha C40 con 6 cuerdas");
 
     echo $flautaDulce . "<br>";
     echo $guitarraAcustica . "<br>";

@@ -66,9 +66,8 @@ abstract class InstrumentoBase
     abstract public function sonido(): string;
     abstract public function afinar(): string;
 
-
     public function __toString(): string
     {
-        return "Instrumento con descripción {$this->descripcion}, ID: {$this->idInstrumento} de un total de " . self::$instrumentosCreados . ". Tiene {$this->edad} años. La clase es " . $this::class;
+        return "instrumento con descripción {$this->descripcion}, instancia {$this->idInstrumento} de un total de " . self::$instrumentosCreados . ". Tiene {$this->edad} años. La clase es " . get_class($this);
     }
 }
