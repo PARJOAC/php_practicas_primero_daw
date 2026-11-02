@@ -1,15 +1,14 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-$flautaDulce = new Flauta("Flauta de plástico para clase");
-$guitarraAcustica = new Guitarra("Yamaha C40 con 6 cuerdas");
+$flautaDulce = Flauta::CrearDesdeArray(['material' => 'plástico para clase', 'edad' => 2]);
 
 //dibuja la plantilla de la vista
 inicioCabecera("CLASES - EJERCICIO 1");
 cabecera();
 finCabecera();
 inicioCuerpo("CLASES - EJERCICIO 1");
-cuerpo($flautaDulce, $guitarraAcustica); //llamo a la vista
+cuerpo($flautaDulce); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -22,7 +21,7 @@ function cabecera()
 
 }
 //vista
-function cuerpo($flautaDulce, $guitarraAcustica)
+function cuerpo($flautaDulce)
 {
 ?>
     <br>
@@ -30,5 +29,4 @@ function cuerpo($flautaDulce, $guitarraAcustica)
 <?php
 
     echo $flautaDulce . "<br>";
-    echo $guitarraAcustica . "<br>";
 }

@@ -171,8 +171,7 @@ function inicioCuerpo($cabecera)
                         <a href="#">Relación 4 ▾</a>
                         <ul>
                             <li><a href="/aplicacion/relacion4/ejercicio1.php">Ejercicio 1</a></li>
-                            <li><a href="/aplicacion/relacion4/ejercicio2.php">Ejercicio 2</a></li>
-                            <li><a href="/aplicacion/relacion4/ejercicio3.php">Ejercicio 3</a></li>
+                            <li><a href="/aplicacion/relacion4/ejercicio2_3.php">Ejercicio 2-3</a></li>
                             <li><a href="/aplicacion/relacion4/ejercicio4.php">Ejercicio 4</a></li>
                             <li><a href="/aplicacion/relacion4/ejercicio5.php">Ejercicio 5</a></li>
                             <li><a href="/aplicacion/relacion4/ejercicio6.php">Ejercicio 6</a></li>
