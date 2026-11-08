@@ -1,6 +1,5 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-<<<<<<< HEAD
 
 // ==========================================
 // CONTROLADOR (EJERCICIO 1 y 2)
@@ -375,34 +374,4 @@ function mostrarResumen(array $datos): void
         <p><a href="">Volver al formulario</a></p>
     </div>
 <?php
-=======
-//controlador
-
-
-//dibuja la plantilla de la vista
-inicioCabecera("CLASES - EJERCICIO 1");
-cabecera();
-finCabecera();
-inicioCuerpo("CLASES - EJERCICIO 1");
-cuerpo(); //llamo a la vista
-finCuerpo();
-// **********************************************************
-
-//vista
-function cabecera()
-{
-?>
-    <!-- esto va en el head -->
-<?php
-
-}
-//vista
-function cuerpo()
-{
-?>
-    <br>
-
-<?php
-
->>>>>>> 3780e9553849b698a5850259302a14dbc975de93
 }
