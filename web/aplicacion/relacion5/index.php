@@ -4,11 +4,7 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 // ==========================================
 // CONTROLADOR (EJERCICIO 1 y 2)
 // ==========================================
-<<<<<<< HEAD
-require_once dirname(__FILE__) . "/../../scripts/librerias/val_normal.php";
-=======
 require_once dirname(__FILE__) . "/funciones/val_normal.php";
->>>>>>> a32823c1ee35e1609c1c720cb3d8c023cbe534a9
 
 use function VALNORMAL\validaEntero;
 use function VALNORMAL\validaReal;
