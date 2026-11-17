@@ -1,14 +1,13 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-$flautaDulce = Flauta::CrearDesdeArray(['material' => 'plástico para clase', 'edad' => 2]);
 
 //dibuja la plantilla de la vista
 inicioCabecera("CLASES - EJERCICIO 1");
 cabecera();
 finCabecera();
 inicioCuerpo("CLASES - EJERCICIO 1");
-cuerpo($flautaDulce); //llamo a la vista
+cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -21,12 +20,11 @@ function cabecera()
 
 }
 //vista
-function cuerpo($flautaDulce)
+function cuerpo()
 {
 ?>
     <br>
 
 <?php
 
-    echo $flautaDulce . "<br>";
 }
