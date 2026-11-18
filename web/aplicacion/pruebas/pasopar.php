@@ -2,47 +2,55 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
-// Datos básicos
-$nombre = "Pablo";
-$edad = 21;
+//datos basicos
+$nombre="Vicente";
+$edad=30;
 
-$basicos = [
-    "nombre" => $nombre,
-    "edad" => $edad
+$basicos=[
+    "nombre"=>$nombre,
+    "edad"=>$edad
 ];
 
-// Relleno otras
-$otras = rellenarOtras();
+//relleno otras
+$otras=rellenarOtras();
+
+
 
 //dibuja la plantilla de la vista
-inicioCabecera("Mi Aplicación");
+inicioCabecera("Mi aplicacion");
 cabecera();
 finCabecera();
-inicioCuerpo("PASO PARAMETROS");
-cuerpo($basicos, $otras); //llamo a la vista
+inicioCuerpo("PASO PARAMETROs");
+cuerpo($basicos, $otras);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
 //vista
-function cabecera()
+function cabecera() 
 {
-?>
+    ?>
     <!-- esto va en el head -->
-<?php
+     <?php   
+
+
 
 }
+
 //vista
-function cuerpo($bas, $otr)
+function cuerpo($bas, $ot)
 {
 ?>
     <br><br>
 
 <?php
-//PHP_EOL ES PARA UN SALTO DE LINEA
-echo "Mi nombre es {$bas["nombre"]} y tengo {$bas["edad"]} años, estoy estudiando en {$otr}".PHP_EOL;
+
+
+    echo "Mi nombre es {$bas["nombre"]} de {$bas["edad"]} años".PHP_EOL;
+    "Con otros datos {$ot}";
+
 }
 
-function rellenarOtras()
-{
-    return "2º DAW";
+
+function rellenarOtras(){
+    return "de 2 DAW";
 }
