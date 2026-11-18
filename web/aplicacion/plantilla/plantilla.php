@@ -185,6 +185,13 @@ function inicioCuerpo($cabecera)
                             <li><a href="/aplicacion/relacion5/index.php">Formulario</a></li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="#">Relación 7 ▾</a>
+                        <ul>
+                            <li><a href="/aplicacion/relacion7/index.php">PUNTO</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
