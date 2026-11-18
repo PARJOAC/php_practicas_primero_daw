@@ -38,6 +38,16 @@ $datos = [
 */
 $errores=[];
 
+if (isset($_POST["descargar"]))
+    {
+        $nombreSalida="datos.txt";
+        header('Content-Type:'.'text/plain');
+        header('Content-Disposition:attachment;filename="'.$nombreSalida.'"');
+        echo "esto es lo que va en la respuesta".PHP_EOL;
+        echo "y por tanto en el fichero";
+        exit;
+    }
+
 if (isset($_POST["subida"]))
     {
         //recojo el nombre
@@ -129,6 +139,8 @@ $_FILES -->
         <input name="archivo" type="file" /><br>
         <input type="text" name="nombre"/><br><br>
         <input type="submit" value="Enviar fichero" name="subida"/>
+        <input type="submit" value="descargar" name="descargar"/>
+        
     </form>
 <?php
 
