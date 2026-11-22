@@ -130,6 +130,13 @@ function inicioCuerpo($cabecera)
                     <li><a href="/aplicacion/pruebas/basicas.php">Ejemplos Básicos</a></li>
 
                     <li>
+                        <a href="#">Mi curso ▾</a>
+                        <ul>
+                            <li><a href="/aplicacion/miCurso/prueba.php">Ejercicio 1</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
                         <a href="#">Relación 1 ▾</a>
                         <ul>
                             <li><a href="/aplicacion/relacion1/ejercicio1.php">Ejercicio 1</a></li>
@@ -189,7 +196,7 @@ function inicioCuerpo($cabecera)
                     <li>
                         <a href="#">Relación 7 ▾</a>
                         <ul>
-                            <li><a href="/aplicacion/relacion7/index.php">PUNTO</a></li>
+                            <li><a href="/aplicacion/relacion7/index.php">Puntos</a></li>
                         </ul>
                     </li>
                 </ul>
