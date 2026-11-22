@@ -6,26 +6,11 @@ const NUME1=56;
         
 //controlador
 
-$barra=[
-     [
-       "TEXTO"=> "inicio",
-       "LINK" =>"/index.php",
-     ],
-       [ 
-       "TEXTO"=> "pruebas",   
-       "LINK" =>"/aplicacion/pruebas/index.php",
-     ], 
-       [ 
-       "TEXTO"=> "eje. basicos",   
-     ] 
-];
-
-
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("pruebas basicas",$barra);
+inicioCuerpo("pruebas basicas");
 cuerpo(); //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -86,9 +71,8 @@ function cuerpo()
         if (isset($cadena2))
              echo $cadena2;
 
-        echo "el numero real $real";
-        
         $real=1234.56789012345678901;
+        echo "el numero real $real";
         $real+=  0.432109876549;
 
         $real=1234.5678901;
@@ -134,8 +118,8 @@ function cuerpo()
 
         $var=1+true;
         $var=1+1.5;
-        $var=1+"1hola";
-        $var=1+"1.5hola";
+        $var=1+(int)"1hola";
+        $var=1+(float)"1.5hola";
         //$var=1+"hola";
         //$var=1+[];
         $aux=125;
@@ -143,7 +127,7 @@ function cuerpo()
         $aux=true;
         $var="hola ".$aux;
         $aux=[];
-        $var="hola ".$aux;
+        $var="hola ".json_encode($aux);
         $aux="adios";
         $var="hola ".$aux;
 
