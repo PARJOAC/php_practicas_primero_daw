@@ -99,7 +99,7 @@ $actualFinal = current($frutas);
 reset($frutas); // Volver al inicio
 
 $claveFruta = array_search("pera", $frutas);
-$claveEncontrada = $claveFruta !== false ? "Ubicación de \'$frutas[$claveFruta]\' en el índice: " . $claveFruta : "No encontrada la clave";
+$claveEncontrada = $claveFruta !== false ? "Ubicación de '$frutas[$claveFruta]' en el índice: " . $claveFruta : "No encontrada la clave";
 
 $fechaActual = date("d/m/y h:i:s");
 date_default_timezone_set('Europe/Madrid');
